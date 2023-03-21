@@ -1,0 +1,36 @@
+# Archivos y directorios específicos de Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Archivos y directorios específicos de Git
+.git
+.gitignore
+
+# Archivos y directorios específicos del entorno local
+.env
+.env.example
+.env.local
+
+# Directorios de caché
+.cache
+.nyc_output
+
+# Archivos y directorios de configuración específicos de los editores
+.vscode
+.idea
+
+# Archivos y directorios de registro
+logs
+*.log
+
+# Directorios de construcción
+dist
+build
+
+# Otros archivos y directorios innecesarios
+*.tmp
+*.swp
+*.swo
+.DS_Store

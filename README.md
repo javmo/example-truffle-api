@@ -33,9 +33,9 @@ npm install
 
 3. Inicia Ganache CLI o Ganache GUI para tener una instancia local de Ethereum funcionando.
 
-4.1 Crea un archivo llamado .env en la raíz de tu proyecto.
+4.1 Crea un archivo llamado `.env` en la raíz de tu proyecto.
 
-4.2 Añade las siguientes variables de entorno al archivo .env. Asegúrate de reemplazar los valores de ejemplo con los valores adecuados para tu entorno:
+4.2 Añade las siguientes variables de entorno al archivo `.env`. Asegúrate de reemplazar los valores de ejemplo con los valores adecuados para tu entorno:
 
 ```sh 
 # RPC_HOST: Host de la red blockchain (por ejemplo, Ganache)
@@ -47,7 +47,7 @@ RPC_PORT=8545
 # NETWORK_ID: ID de la red blockchain
 NETWORK_ID=*
 ```
-4.3 Guarda y cierra el archivo .env. Las variables de entorno definidas en el archivo .env ahora estarán disponibles en tu aplicación.
+4.3 Guarda y cierra el archivo `.env`. Las variables de entorno definidas en el archivo .env ahora estarán disponibles en tu aplicación.
 
 5. Realiza la migración del contrato inteligente:
 ```sh 

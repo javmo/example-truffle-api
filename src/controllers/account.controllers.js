@@ -1,12 +1,10 @@
 const logger = require('../services/logger');
 const TruffleContract = require("truffle-contract");
-const { provider, web3 } = require("../services/web3Config");
+const { provider, web3, getGenesisAddress } = require("../services/web3Config");
 
 
 // Carga el archivo JSON del contrato compilado
 const ChartOfAccountsJSON = require("../../build/contracts/ChartOfAccounts.json");
-
-
 
 const ChartOfAccounts = TruffleContract(ChartOfAccountsJSON);
 ChartOfAccounts.setProvider(provider);
@@ -29,7 +27,6 @@ const getAccounts = async (req, res) => {
 
         res.send(accountList);
     } catch (error) {
-        console.error(error);
         logger.error(`:fire: Error al interactuar con el contrato  ${error}`);
         res.status(500).send(`Error al interactuar con el contrato  ${error}`);
     }
@@ -37,10 +34,11 @@ const getAccounts = async (req, res) => {
 
 const addAccount = async (req, res) => {
     try {
-        const { name, accountType, balance, address } = req.body;
+        const { name, accountType, balance } = req.body;
 
         const instance = await ChartOfAccounts.deployed();
-        const result = await instance.addAccount(name, accountType, balance, { from:address });
+        const genesisAddress = await getGenesisAddress();
+        const result = await instance.addAccount(name, accountType, balance, { from: genesisAddress });
 
         res.status(201).send(result);
     } catch (error) {

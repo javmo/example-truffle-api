@@ -12,9 +12,24 @@ web3.eth.getNodeInfo()
     })
     .catch(e => {
         logger.warn(`:no_entry:  Blockchain offline-` + e);
-    })
+    });
+
+// Se busca si hay una address en las variables de ambiente sino se usa la coinbase de la blockchain
+const getGenesisAddress = () => {
+    return web3.eth.getCoinbase()
+      .then(address => {
+        const genesisAddress = process.env.GENESIS_ADDRESS || address;
+        logger.info(`:key: calling a contract with Genesis Address: ${genesisAddress}`);
+        return genesisAddress;
+      })
+      .catch(e => {
+        logger.warn(`:no_entry: Problem coinbase address-` + e);
+        return null;
+      });
+  };
 
 
 module.exports = {
-    provider
+    provider,
+    getGenesisAddress
 };

@@ -9,6 +9,14 @@ Este proyecto es un ejemplo de cómo interactuar con un contrato inteligente de 
 - Truffle v5.x
 - Ganache CLI o Ganache GUI para un entorno local de Ethereum
 
+## Instalación de Truffle
+
+Para instalar Truffle globalmente en tu sistema, ejecuta el siguiente comando:
+
+```sh
+npm install -g truffle
+```
+
 ## Configuración del proyecto
 
 1. Clona el repositorio:

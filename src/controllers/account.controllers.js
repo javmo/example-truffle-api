@@ -17,11 +17,12 @@ const getAccounts = async (req, res) => {
         
         const accountList = [];
         for (let i = 0; i < accounts.length; i++) {
-            const { name, accountType, balance } = accounts[i];
+            const { name, accountType, balance, description } = accounts[i];
             accountList.push({
                 name: name,
                 accountType: accountType,
-                balance: balance.toString()
+                balance: balance.toString(),
+                description: description
             });
         }
 
@@ -34,11 +35,11 @@ const getAccounts = async (req, res) => {
 
 const addAccount = async (req, res) => {
     try {
-        const { name, accountType, balance } = req.body;
+        const { name, accountType, balance, description } = req.body;
 
         const instance = await ChartOfAccounts.deployed();
         const genesisAddress = await getGenesisAddress();
-        const result = await instance.addAccount(name, accountType, balance, { from: genesisAddress });
+        const result = await instance.addAccount(name, accountType, balance, description, { from: genesisAddress });
 
         res.status(201).send(result);
     } catch (error) {

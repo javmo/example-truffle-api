@@ -6,6 +6,7 @@ contract ChartOfAccounts {
         string name;
         string accountType;
         uint256 balance;
+        string description;
     }
 
     Account[] public accounts;
@@ -13,9 +14,10 @@ contract ChartOfAccounts {
     function addAccount(
         string memory _name,
         string memory _accountType,
-        uint256 _balance
+        uint256 _balance,
+        string memory _description
     ) public {
-        accounts.push(Account(_name, _accountType, _balance));
+        accounts.push(Account(_name, _accountType, _balance, _description));
     }
 
     function getAllAccounts() public view returns (Account[] memory) {

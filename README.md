@@ -15,29 +15,34 @@ Este proyecto es un ejemplo de cómo interactuar con un contrato inteligente de 
 
 ```sh
 git clone https://github.com/javmo/example-truffle-api.git
+```
 
 2. Instala las dependencias del proyecto:
 cd example-truffle-api
-npm install
+```sh npm install
+```
 
 3. Inicia Ganache CLI o Ganache GUI para tener una instancia local de Ethereum funcionando.
 
 4. Configura el archivo .env con las variables de entorno necesarias:
-URI_PROVIDER=http://localhost:7545 # Cambiar a la dirección de tu proveedor Ethereum
+```sh URI_PROVIDER=http://localhost:7545 # Cambiar a la dirección de tu proveedor Ethereum
+```
 
 5. Realiza la migración del contrato inteligente:
-truffle migrate --reset
+```sh truffle migrate --reset
+```
 
-# Ejecución de la API
+## Ejecución de la API
 Para iniciar la API, ejecuta el siguiente comando:
 
 ```sh
 npm start
+```
 
 La API estará disponible en http://localhost:3000.
 
-Rutas de la API
-GET /api/accounts: Devuelve todas las cuentas.
-POST /api/accounts: Agrega una nueva cuenta.
-GET /api/accounts/:name: Devuelve una cuenta por su nombre.
+## Rutas de la API
+- `GET /api/accounts`: Devuelve todas las cuentas.
+- `POST /api/accounts`: Agrega una nueva cuenta.
+- `GET /api/accounts/:name`: Devuelve una cuenta por su nombre.
 

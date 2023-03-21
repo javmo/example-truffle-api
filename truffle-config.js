@@ -43,8 +43,14 @@
 
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
+require('dotenv').config();
 
 // const HDWalletProvider = require('@truffle/hdwallet-provider');
+const rpcHost = process.env.RPC_HOST || '127.0.0.1';
+const rpcPort = process.env.RPC_PORT || 8545;
+const networkId = process.env.NETWORK_ID || '*';
+const gas = process.env.GAS || '4500000';
+const gasPrice = process.env.GAS_PRICE || '10000000000';
 
 module.exports = {
   /**
@@ -97,9 +103,11 @@ module.exports = {
     //   production: true    // Treats this network as if it was a public net. (default: false)
     // }
     development: {
-      host: "127.0.0.1",
-      port: 7545,
-      network_id: "*" // Match any network id
+      host: rpcHost,
+      port: rpcPort,
+      network_id: networkId, // Match any network id
+      gas: gas,
+      gasPrice: gasPrice,
     },
     develop: {
       port: 8545

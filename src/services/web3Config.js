@@ -1,9 +1,11 @@
 const Web3 = require("web3");
 const logger = require('../services/logger');
-
+const rpcHost = process.env.RPC_HOST || '127.0.0.1';
+const rpcPort = process.env.RPC_PORT || 8545;
+const rpcUrl = `http://${rpcHost}:${rpcPort}`;
 
 // Configura el proveedor de Web3 y la instancia del contrato
-const web3 = new Web3(process.env.URI_PROVIDER);
+const web3 = new Web3(rpcUrl);
 const provider = new Web3.providers.HttpProvider(process.env.URI_PROVIDER);
 
 web3.eth.getNodeInfo()

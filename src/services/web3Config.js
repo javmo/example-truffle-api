@@ -6,11 +6,11 @@ const rpcUrl = `http://${rpcHost}:${rpcPort}`;
 
 // Configura el proveedor de Web3 y la instancia del contrato
 const web3 = new Web3(rpcUrl);
-const provider = new Web3.providers.HttpProvider(process.env.URI_PROVIDER);
+const provider = new Web3.providers.HttpProvider(rpcUrl);
 
 web3.eth.getNodeInfo()
     .then(nodeInfo => {
-        logger.info(`:rocket: Blockchain is connected, node: ${nodeInfo}`);
+        logger.info(`:rocket: Blockchain is connected, node: ${nodeInfo} , URL:${rpcUrl}`);
     })
     .catch(e => {
         logger.warn(`:no_entry:  Blockchain offline-` + e);

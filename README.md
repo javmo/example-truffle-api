@@ -64,9 +64,9 @@ npm start
 La API estará disponible en http://localhost:3000.
 
 ## Rutas de la API
-- `GET /api/accounts`: Devuelve todas las cuentas.
-- `POST /api/accounts`: Agrega una nueva cuenta.
-- `GET /api/accounts/:name`: Devuelve una cuenta por su nombre.
+- `GET /api/account`: Devuelve todas las cuentas.
+- `POST /api/account`: Agrega una nueva cuenta.
+- `GET /api/account/:name`: Devuelve una cuenta por su nombre.
 
 ## Estructura de carpetas
 ```

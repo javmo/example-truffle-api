@@ -10,7 +10,7 @@ const provider = new Web3.providers.HttpProvider(rpcUrl);
 
 web3.eth.getNodeInfo()
     .then(nodeInfo => {
-        logger.info(`:rocket: Blockchain is connected, node: ${nodeInfo} , URL:${rpcUrl}`);
+        logger.info(`:rocket: Blockchain is connected, node: ${nodeInfo} , RPC_HOST:${rpcUrl}`);
     })
     .catch(e => {
         logger.warn(`:no_entry:  Blockchain offline-` + e);

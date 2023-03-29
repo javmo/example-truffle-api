@@ -10,11 +10,12 @@ services:
     build: .
     image: example-truffle-api
     ports:
-      - '3000:3000'
+      - '4000:4000'
     environment:
       - RPC_HOST=ganache
       - RPC_PORT=8545
       - NETWORK_ID=*
+      - PORT=4000
     depends_on:
       - ganache
 

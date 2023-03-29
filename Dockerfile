@@ -21,7 +21,7 @@ RUN truffle compile
 
 
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 4000
 
 # Start the server
 CMD [ "npm","run","deploy-and-start" ]
